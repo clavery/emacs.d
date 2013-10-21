@@ -1,0 +1,9 @@
+backups/
+auto-save-list/
+elpa/
+org-clock-save.el
+places
+
+.mc-lists.el
+.org-id-locations
+my-custom-variables.el
