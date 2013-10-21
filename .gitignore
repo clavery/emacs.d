@@ -8,3 +8,5 @@ places
 .org-id-locations
 my-custom-variables.el
 bookmarks
+/server/server
+/url/cookies

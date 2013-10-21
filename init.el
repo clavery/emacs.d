@@ -10,14 +10,7 @@
       "http://marmalade-repo.org/packages/"))
 
 ;; check if the packages is installed; if not, install it.
-(mapc
- (lambda (package)
-   (or (package-installed-p package)
-       (if (y-or-n-p (format "Package %s is missing. Install it? " package)) 
-           (package-install package))))
- '(color-theme-molokai dired-details evil git-commit-mode
-                       gitignore-mode magit org
-                       smex undo-tree js2-mode autopair))
+;;(dired-details evil git-commit-mode gitignore-mode magit org smex undo-tree js2-mode autopair))
 
 
 (require 'autopair)
@@ -29,6 +22,7 @@
 (add-to-list 'load-path user-emacs-directory)
 
 (require 'server)
+(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
 (unless (server-running-p)
   (server-start))
 

@@ -120,6 +120,14 @@
  '(woman-addition ((t (:foreground "#AE81FF"))))
  '(woman-bold ((t (:foreground "#F92672"))))
  '(woman-italic ((t (:foreground "#A6E22E"))))
+ ;; magit stuff!!
+ '(magit-file-header ((t (:foreground "violet"))))
+ '(magit-hunk-header ((t (:foreground "blue"))))
+ '(magit-header ((t (:foreground "cyan"))))
+ '(magit-tag-label ((t (:background "blue" :foreground "orange"))))
+ '(magit-diff-add ((t (:foreground "MediumSlateBlue"))))
+ '(magit-diff-del ((t (:foreground "maroon"))))
+ '(magit-item-highlight ((t (:background "#000012"))))
  '(woman-unknown ((t (:foreground "#66D9EF")))))
 
 ;;;###autoload
