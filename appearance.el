@@ -53,4 +53,6 @@
 (setq default-frame-alist '(
                             (font . "Inconsolata-g-14")
                             ))
+(add-to-list 'default-frame-alist '(cursor-color . "#FFFF00"))
+(set-cursor-color "#FFFF00")
 (provide 'appearance)

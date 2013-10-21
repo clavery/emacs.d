@@ -31,7 +31,7 @@
  'molokai
 
  '(default ((t (:background "#1B1D1E" :foreground "#F8F8F2"))))
- '(cursor ((t (:foregound "#F8F8F0"))))
+ '(cursor ((t (:foregound "#000000" :background "#FFFF00"))))
 
  '(bold ((t (:weight bold))))
  '(bold-italic ((t (:weight bold :slant italic))))
@@ -81,9 +81,9 @@
  '(icompletep-determined ((t (:foreground "#A6E22E"))))
  '(icompletep-keys ((t (:foreground "#F92672"))))
  '(icompletep-nb-candidates ((t (:foreground "#AE81FF"))))
- '(isearch ((t (:foreground "#C4BE89" :background "#000000"))))
+ '(isearch ((t (:foreground "#000000" :background "#FAFF3C"))))
  '(isearch-fail ((t (:foreground "#FFFFFF" :background "#333333"))))
- '(lazy-highlight ((t (:foreground "#465457" :background "#000000"))))
+ '(lazy-highlight ((t (:foreground "#000000" :background "#FAFF3C"))))
  '(markdown-italic-face ((t (:slant italic))))
  '(markdown-bold-face ((t (:weight bold))))
  '(markdown-header-face ((t (:weight normal))))
