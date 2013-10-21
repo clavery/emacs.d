@@ -29,11 +29,13 @@
 ;; Capture templates
 (setq org-capture-templates
       (quote (("t" "todo" entry (file+headline (concat org-directory "/refile.org") "Tasks")
-               "* TODO %?\n%U\n%a\n")
+               "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
               ("n" "note" entry (file (concat org-directory "/Notes.org"))
                "* %? :NOTE:\n%U\n%a\n")
               ("m" "Meeting" entry (file+headline (concat org-directory "/refile.org") "Meetings")
                "* MEETING with %?\n%U" :clock-in t :clock-resume t)
+              ("s" "Schedule" entry (file+headline (concat org-directory "/refile.org") "Schedule")
+               "* TODO %?\nSCHEDULED: %^{When}t")
               ("p" "Phone call" entry (file+headline (concat org-directory "/refile.org"), "Phone")
                "* PHONE %?\n%U" :clock-in t :clock-resume t))))
 

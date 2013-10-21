@@ -107,3 +107,6 @@
 
 (require 'diminish)
 (eval-after-load "filladapt" '(diminish 'filladapt-mode))
+
+(require 'minimap)
+(setq minimap-window-location 'right)
