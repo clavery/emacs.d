@@ -16,7 +16,8 @@
              (concat org-directory "/Pixelmedia.org")
              (concat org-directory "/Personal.org")
              (concat org-directory "/refile.org")
-             (concat org-directory "/Dev.org")))
+             (concat org-directory "/Notes.org")
+             (concat org-directory "/GravityTracks.org")))
 
 
 (setq org-todo-keywords
