@@ -12,11 +12,6 @@
 ;(load-theme 'prez t)
 (load-theme 'molokai t)
 ;(load-theme 'tomorrow-night-bright t)
-
-(require 'powerline)
-(powerline-center-evil-theme)
-
-
 (show-paren-mode 1)
 
 (linum-mode 1)
@@ -61,4 +56,7 @@
                             ))
 (add-to-list 'default-frame-alist '(cursor-color . "#FFFF00"))
 (set-cursor-color "#FFFF00")
+
+
+
 (provide 'appearance)

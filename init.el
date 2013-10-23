@@ -16,6 +16,7 @@
 ;;(dired-details evil git-commit-mode gitignore-mode magit org smex undo-tree js2-mode autopair))
 
 
+
 (require 'autopair)
 (autopair-global-mode)
 
@@ -107,3 +108,75 @@
 
 (require 'minimap)
 (setq minimap-window-location 'right)
+
+;; Mode line
+(setq djr-mode-line-evil-status
+      '(:eval (cond 
+               ((evil-normal-state-p)
+                (propertize " <N> " 'face 'mode-line-evil-status-normal-face))
+               ((evil-insert-state-p)
+                (propertize " <I> " 'face 'mode-line-evil-status-insert-face))
+               ((member major-mode evil-emacs-state-modes)
+                (propertize " <E> " 'face 'mode-line-evil-status-normal-face))
+               ((evil-emacs-state-p)
+                (propertize " <E> " 'face 'mode-line-evil-status-emacs-face))
+               (t
+                (propertize " <?> " 'face 'mode-line-evil-status-emacs-face)))))
+(setq my-mode-line-format
+  (list
+     " "
+
+     djr-mode-line-evil-status
+
+    
+    ;; the buffer name; the file name as a tool tip
+    '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+        'help-echo (buffer-file-name)))
+
+    ;; line and column
+    "(" ;; '%02' to set to 2 chars at least; prevents flickering
+      (propertize "%02l" 'face 'font-lock-type-face) ","
+      (propertize "%02c" 'face 'font-lock-type-face) 
+    ") "
+
+    ;; relative position, size of file
+    "["
+    (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+    "/"
+    (propertize "%I" 'face 'font-lock-constant-face) ;; size
+    "] "
+
+    ;; the current major mode for the buffer.
+    "["
+
+    '(:eval (propertize "%m" 'face 'font-lock-string-face
+              'help-echo buffer-file-coding-system))
+    "] "
+
+
+    "["
+    ;; was this buffer modified since the last save?
+    '(:eval (when (buffer-modified-p)
+              (concat ","  (propertize "Mod"
+                             'face 'font-lock-warning-face
+                             'help-echo "Buffer has been modified"))))
+
+    ;; is this buffer read-only?
+    '(:eval (when buffer-read-only
+              (concat ","  (propertize "RO"
+                             'face 'font-lock-type-face
+                             'help-echo "Buffer is read-only"))))  
+    "] "
+
+    ;; add the time, with the date and the emacs uptime in the tooltip
+    '(:eval (propertize (format-time-string "%H:%M")
+              'help-echo
+              (concat (format-time-string "%c; ")
+                      (emacs-uptime "Uptime:%hh"))))
+    ;; i don't want to see minor-modes; but if you want, uncomment this:
+    ;; minor-mode-alist  ;; list of minor modes
+    ))
+
+(setq-default mode-line-format my-mode-line-format)
+(setq mode-line-format my-mode-line-format)
+(setq evil-mode-line-format 'nil)
