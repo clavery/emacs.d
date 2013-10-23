@@ -13,6 +13,10 @@
 (load-theme 'molokai t)
 ;(load-theme 'tomorrow-night-bright t)
 
+(require 'powerline)
+(powerline-center-evil-theme)
+
+
 (show-paren-mode 1)
 
 (linum-mode 1)
@@ -34,8 +38,10 @@
 
 (setq linum-format 'my-linum-relative-line-numbers)
 
+;; TODO change the face for current line
 (defun my-linum-relative-line-numbers (line-number)
-  (let ((offset (- line-number my-linum-current-line-number)))
+  (let ((offset (if (= line-number my-linum-current-line-number)
+                    line-number (- line-number my-linum-current-line-number))))
     (propertize (format my-linum-format-string offset) 'face 'linum)))
 
 (defadvice linum-update (around my-linum-update)

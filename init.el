@@ -1,5 +1,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(fringe-mode 0)
 
 (setq inhibit-startup-message t)
 
@@ -8,6 +9,8 @@
 (add-to-list 'package-archives 
     '("marmalade" .
       "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 ;; check if the packages is installed; if not, install it.
 ;;(dired-details evil git-commit-mode gitignore-mode magit org smex undo-tree js2-mode autopair))
