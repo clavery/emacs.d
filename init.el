@@ -185,3 +185,5 @@
 (setq-default mode-line-format my-mode-line-format)
 (setq mode-line-format my-mode-line-format)
 (setq evil-mode-line-format 'nil)
+
+(require 'javascript)
