@@ -29,11 +29,13 @@
 
 (setq linum-format 'my-linum-relative-line-numbers)
 
-;; TODO change the face for current line
 (defun my-linum-relative-line-numbers (line-number)
   (let ((offset (if (= line-number my-linum-current-line-number)
                     line-number (- line-number my-linum-current-line-number))))
-    (propertize (format my-linum-format-string offset) 'face 'linum)))
+    (propertize (format my-linum-format-string offset) 'face
+                (if (= line-number my-linum-current-line-number)
+                    'font-lock-string-face
+                    'linum))))
 
 (defadvice linum-update (around my-linum-update)
   (let ((my-linum-current-line-number (line-number-at-pos)))

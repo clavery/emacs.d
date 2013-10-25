@@ -122,6 +122,7 @@
                 (propertize " <E> " 'face 'font-lock-warning-face))
                (t
                 (propertize " <?> " 'face 'font-lock-warning-face)))))
+
 (setq my-mode-line-format
   (list
      " "
