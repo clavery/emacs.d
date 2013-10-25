@@ -110,23 +110,23 @@
 (setq minimap-window-location 'right)
 
 ;; Mode line
-(setq djr-mode-line-evil-status
+(setq my-mode-line-evil-status
       '(:eval (cond 
                ((evil-normal-state-p)
-                (propertize " <N> " 'face 'mode-line-evil-status-normal-face))
+                (propertize " <N> " 'face 'font-lock-warning-face))
                ((evil-insert-state-p)
-                (propertize " <I> " 'face 'mode-line-evil-status-insert-face))
+                (propertize " <I> " 'face 'font-lock-warning-face))
                ((member major-mode evil-emacs-state-modes)
-                (propertize " <E> " 'face 'mode-line-evil-status-normal-face))
+                (propertize " <E> " 'face 'font-lock-warning-face))
                ((evil-emacs-state-p)
-                (propertize " <E> " 'face 'mode-line-evil-status-emacs-face))
+                (propertize " <E> " 'face 'font-lock-warning-face))
                (t
-                (propertize " <?> " 'face 'mode-line-evil-status-emacs-face)))))
+                (propertize " <?> " 'face 'font-lock-warning-face)))))
 (setq my-mode-line-format
   (list
      " "
 
-     djr-mode-line-evil-status
+     my-mode-line-evil-status
 
     
     ;; the buffer name; the file name as a tool tip
@@ -157,13 +157,13 @@
     "["
     ;; was this buffer modified since the last save?
     '(:eval (when (buffer-modified-p)
-              (concat ","  (propertize "Mod"
+              (concat ""  (propertize "Mod"
                              'face 'font-lock-warning-face
                              'help-echo "Buffer has been modified"))))
 
     ;; is this buffer read-only?
     '(:eval (when buffer-read-only
-              (concat ","  (propertize "RO"
+              (concat " "  (propertize "RO"
                              'face 'font-lock-type-face
                              'help-echo "Buffer is read-only"))))  
     "] "
@@ -175,6 +175,10 @@
                       (emacs-uptime "Uptime:%hh"))))
     ;; i don't want to see minor-modes; but if you want, uncomment this:
     ;; minor-mode-alist  ;; list of minor modes
+
+    " "
+
+    '(:eval global-mode-string)
     ))
 
 (setq-default mode-line-format my-mode-line-format)
