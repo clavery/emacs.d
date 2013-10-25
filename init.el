@@ -26,9 +26,9 @@
 (add-to-list 'load-path user-emacs-directory)
 
 (require 'server)
-(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
-(unless (server-running-p)
-  (server-start))
+;(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
+;(unless (server-running-p)
+;  (server-start))
 
 (require 'better-defaults)
 

@@ -7,11 +7,7 @@
 
 (setq custom-theme-directory (concat user-emacs-directory "themes"))
 
-;(load-theme 'purple-haze)
-;(load-theme 'monokai t)
-;(load-theme 'prez t)
 (load-theme 'molokai t)
-;(load-theme 'tomorrow-night-bright t)
 (show-paren-mode 1)
 
 (linum-mode 1)
@@ -26,7 +22,7 @@
 (defun my-linum-get-format-string ()
   (let* ((width (1+ (length (number-to-string
                              (count-lines (point-min) (point-max))))))
-         (format (concat "%" (number-to-string width) "d")))
+         (format (concat "%" (number-to-string width) "d ")))
     (setq my-linum-format-string format)))
 
 (defvar my-linum-current-line-number 0)
