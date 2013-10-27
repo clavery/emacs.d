@@ -30,8 +30,8 @@
 
 (setq is-mac (equal system-type 'darwin))
 (when is-mac
-  (exec-path-from-shell-initialize))
-
+  (exec-path-from-shell-initialize)
+  (setq mac-command-modifier 'meta))
 (require 'server)
 ;(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
 ;(unless (server-running-p)
