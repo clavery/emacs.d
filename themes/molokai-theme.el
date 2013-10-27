@@ -81,9 +81,9 @@
  '(icompletep-determined ((t (:foreground "#A6E22E"))))
  '(icompletep-keys ((t (:foreground "#F92672"))))
  '(icompletep-nb-candidates ((t (:foreground "#AE81FF"))))
- '(isearch ((t (:foreground "#000000" :background "#FAFF3C"))))
+ '(isearch ((t (:foreground "#000000" :background "SlateBlue1"))))
  '(isearch-fail ((t (:foreground "#FFFFFF" :background "#333333"))))
- '(lazy-highlight ((t (:foreground "#000000" :background "#FAFF3C"))))
+ '(lazy-highlight ((t (:foreground "#000000" :background "SlateBlue1"))))
  '(markdown-italic-face ((t (:slant italic))))
  '(markdown-bold-face ((t (:weight bold))))
  '(markdown-header-face ((t (:weight normal))))
@@ -114,7 +114,7 @@
  '(outline-7 ((t (:foreground "#F92672"))))
  '(outline-8 ((t (:foreground "#A6E22E"))))
  '(secondary-selection ((t (:background "#272822"))))
- '(show-paren-match-face ((t (:foreground "#000000" :background "#FD971F"))))
+ '(show-paren-match-face ((t (:foreground "#000000" :background "turquoise4"))))
  '(show-paren-mismatch-face ((t (:foreground "#960050" :background "#1E0010"))))
  '(widget-inactive-face ((t (:background "#ff0000"))))
  '(woman-addition ((t (:foreground "#AE81FF"))))
@@ -128,9 +128,10 @@
  '(magit-diff-add ((t (:foreground "MediumSlateBlue"))))
  '(magit-diff-del ((t (:foreground "maroon"))))
  '(magit-item-highlight ((t (:background "#000012"))))
+ '(linum ((t (:foreground "Grey36" :background "Grey18"))))
  '(woman-unknown ((t (:foreground "#66D9EF")))))
 
-;;;###autoload
+;;;autoload
 (when load-file-name
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))

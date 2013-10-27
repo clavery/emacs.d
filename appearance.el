@@ -9,6 +9,7 @@
 
 (load-theme 'molokai t)
 (show-paren-mode 1)
+(setq show-paren-style 'expression)
 
 (linum-mode 1)
 (global-linum-mode 1)
@@ -30,12 +31,10 @@
 (setq linum-format 'my-linum-relative-line-numbers)
 
 (defun my-linum-relative-line-numbers (line-number)
-  (let ((offset (if (= line-number my-linum-current-line-number)
-                    line-number (- line-number my-linum-current-line-number))))
-    (propertize (format my-linum-format-string offset) 'face
-                (if (= line-number my-linum-current-line-number)
-                    'font-lock-string-face
-                    'linum))))
+  (propertize (format my-linum-format-string line-number) 'face
+              (if (= line-number my-linum-current-line-number)
+                  'font-lock-string-face
+                  'linum)))
 
 (defadvice linum-update (around my-linum-update)
   (let ((my-linum-current-line-number (line-number-at-pos)))

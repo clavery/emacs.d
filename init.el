@@ -39,9 +39,11 @@
 (require 'orgmode)
 
 ;; evil mode
-(require 'evil)
-(evil-mode 1)
-(setq-default evil-shift-width 2)
+;(require 'evil)
+;(evil-mode 1)
+;(setq-default evil-shift-width
+
+(delete-selection-mode 1)
 
 ; show in progress keystrokes
 (setq echo-keystrokes 0.1)
