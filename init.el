@@ -132,6 +132,7 @@
                (t
                 (propertize " <?> " 'face 'font-lock-warning-face)))))
 
+
 (setq my-mode-line-format
   (list
      " "
@@ -204,3 +205,5 @@
 
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-<return>") 'ace-jump-mode)
+
+(setq magit-status-buffer-switch-function 'switch-to-buffer)
