@@ -1,0 +1,9 @@
+[submodule "site-lisp/multiple-cursors"]
+	path = site-lisp/multiple-cursors
+	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule "site-lisp/browse-kill-ring"]
+	path = site-lisp/browse-kill-ring
+	url = https://github.com/T-J-Teru/browse-kill-ring.git
+[submodule "site-lisp/ace-jump-mode"]
+	path = site-lisp/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git

@@ -4,18 +4,15 @@
 
 (setq inhibit-startup-message t)
 
+(setq site-lisp-dir
+      (expand-file-name "site-lisp" user-emacs-directory))
 
 (package-initialize)
 (add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+             '("marmalade" .
+               "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
-
-;; check if the packages is installed; if not, install it.
-;;(dired-details evil git-commit-mode gitignore-mode magit org smex undo-tree js2-mode autopair))
-
-
 
 (require 'autopair)
 (autopair-global-mode)
@@ -24,6 +21,16 @@
 (load custom-file)
 
 (add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path site-lisp-dir)
+
+; load site lisp subdirs
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
+
+(setq is-mac (equal system-type 'darwin))
+(when is-mac
+  (exec-path-from-shell-initialize))
 
 (require 'server)
 ;(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
@@ -189,3 +196,11 @@
 (setq evil-mode-line-format 'nil)
 
 (require 'javascript)
+
+(require 'multiple-cursors)
+
+(require 'browse-kill-ring)
+(define-key global-map (kbd "\C-x y") 'browse-kill-ring)
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-<return>") 'ace-jump-mode)
