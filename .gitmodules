@@ -10,3 +10,6 @@
 [submodule "site-lisp/fix-ido"]
 	path = site-lisp/fix-ido
 	url = https://github.com/lewang/flx.git
+[submodule "site-lisp/web-mode"]
+	path = site-lisp/web-mode
+	url = https://github.com/fxbois/web-mode.git

@@ -25,4 +25,6 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+
 (provide 'keybindings)

@@ -199,6 +199,7 @@
 
 (require 'javascript)
 
+(require 'my-python)
 (require 'multiple-cursors)
 
 (require 'browse-kill-ring)
@@ -240,3 +241,15 @@
               ido-temp-list))))
 (add-hook 'ido-make-file-list-hook 'ido-sort-mtime)
 (add-hook 'ido-make-dir-list-hook 'ido-sort-mtime)
+(require 'web)
+
+(defun iwb ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  (untabify (point-min) (point-max)))
+
+(desktop-save-mode 1)
+
+(setq set-mark-command-repeat-pop t)
