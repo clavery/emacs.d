@@ -256,3 +256,8 @@
 (require 'highlight-indentation)
 (add-hook 'python-mode-hook
           (lambda () (highlight-indentation-current-column-mode)))
+
+(require 'dash-at-point)
+(add-to-list 'dash-at-point-mode-alist '(python-mode . "python2"))
+(add-to-list 'dash-at-point-mode-alist '(js2-mode . "js"))
+

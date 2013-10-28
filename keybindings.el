@@ -27,4 +27,6 @@
 
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 
+(global-set-key (kbd "\C-c d") 'dash-at-point)
+
 (provide 'keybindings)
