@@ -7,3 +7,6 @@
 [submodule "site-lisp/ace-jump-mode"]
 	path = site-lisp/ace-jump-mode
 	url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule "site-lisp/fix-ido"]
+	path = site-lisp/fix-ido
+	url = https://github.com/lewang/flx.git
