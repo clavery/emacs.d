@@ -165,12 +165,11 @@
               'help-echo buffer-file-coding-system))
     "] "
 
-
     "["
     ;; was this buffer modified since the last save?
     '(:eval (when (buffer-modified-p)
               (concat ""  (propertize "Mod"
-                             'face 'font-lock-warning-face
+                             'face 'font-lock-variable-name-face
                              'help-echo "Buffer has been modified"))))
 
     ;; is this buffer read-only?
@@ -253,3 +252,7 @@
 (desktop-save-mode 1)
 
 (setq set-mark-command-repeat-pop t)
+
+(require 'highlight-indentation)
+(add-hook 'python-mode-hook
+          (lambda () (highlight-indentation-current-column-mode)))
