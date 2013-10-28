@@ -46,7 +46,7 @@
 (require 'orgmode)
 
 ;; evil mode
-;(require 'evil)
+(require 'evil)
 ;(evil-mode 1)
 ;(setq-default evil-shift-width
 
