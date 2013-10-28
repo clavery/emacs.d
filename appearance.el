@@ -43,13 +43,13 @@
 
 
 (add-to-list 'face-font-family-alternatives
-             '("Inconsolata-g"))
+             '("Consolas"))
 
 (setq initial-frame-alist '(
-                            (font . "Inconsolata-g-14")
+                            (font . "Consolas-14")
                             ))
 (setq default-frame-alist '(
-                            (font . "Inconsolata-g-14")
+                            (font . "Consolas-14")
                             ))
 (add-to-list 'default-frame-alist '(cursor-color . "#FFFF00"))
 (set-cursor-color "#FFFF00")
