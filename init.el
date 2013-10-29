@@ -261,3 +261,8 @@
 (add-to-list 'dash-at-point-mode-alist '(python-mode . "python2"))
 (add-to-list 'dash-at-point-mode-alist '(js2-mode . "js"))
 
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-ignore-case nil)
+(add-to-list 'ac-modes 'web-mode)
+
