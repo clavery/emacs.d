@@ -266,3 +266,6 @@
 (setq ac-ignore-case nil)
 (add-to-list 'ac-modes 'web-mode)
 
+
+(require 'expand-region)
+(global-set-key (kbd "M-j") 'er/expand-region)
