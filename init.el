@@ -1,5 +1,5 @@
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode 0))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 (if (fboundp 'fringe-mode) (fringe-mode 0))
 
 (setq inhibit-startup-message t)
@@ -15,7 +15,6 @@
              '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (require 'autopair)
-(autopair-global-mode)
 
 (setq custom-file "~/.emacs.d/my-custom-variables.el")
 (load custom-file)
@@ -88,7 +87,6 @@
 (setq ido-everywhere t)
 (setq ido-max-directory-size 100000)
 (ido-everywhere 1)
-
 ; turn off bell
 (setq ring-bell-function 'ignore)
 
@@ -119,9 +117,6 @@
 
 (require 'diminish)
 (eval-after-load "filladapt" '(diminish 'filladapt-mode))
-
-(require 'minimap)
-(setq minimap-window-location 'right)
 
 ;; Mode line
 (setq my-mode-line-evil-status
@@ -244,6 +239,7 @@
               ido-temp-list))))
 (add-hook 'ido-make-file-list-hook 'ido-sort-mtime)
 (add-hook 'ido-make-dir-list-hook 'ido-sort-mtime)
+
 (require 'web)
 
 (defun iwb ()
@@ -252,8 +248,6 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
-
-(desktop-save-mode 1)
 
 (setq set-mark-command-repeat-pop t)
 

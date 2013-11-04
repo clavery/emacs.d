@@ -11,10 +11,6 @@
 (show-paren-mode 1)
 (setq show-paren-style 'expression)
 
-(linum-mode 1)
-(global-linum-mode 1)
-
-
 ;; relative line numbers
 (defvar my-linum-format-string "%3d")
 
