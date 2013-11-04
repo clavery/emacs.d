@@ -125,9 +125,9 @@
  '(magit-hunk-header ((t (:foreground "blue"))))
  '(magit-header ((t (:foreground "cyan"))))
  '(magit-tag-label ((t (:background "blue" :foreground "orange"))))
- '(magit-diff-add ((t (:foreground "MediumSlateBlue"))))
- '(magit-diff-del ((t (:foreground "maroon"))))
- '(magit-item-highlight ((t (:background "#000012"))))
+ '(magit-diff-add ((t (:foreground "Green"))))
+ '(magit-diff-del ((t (:foreground "Red"))))
+ '(magit-item-highlight ((t (:background "#333333"))))
  '(linum ((t (:foreground "Grey36" :background "Grey18"))))
  '(woman-unknown ((t (:foreground "#66D9EF")))))
 
