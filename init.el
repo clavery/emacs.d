@@ -260,3 +260,7 @@
 
 (delete '(".+\\.scss$" flymake-scss-init) flymake-allowed-file-name-masks)
 (setq scss-compile-at-save nil)
+
+
+(if (eq system-type 'windows-nt)
+    (setq magit-git-executable "C:/Program Files (x86)/Git/bin/git.exe"))
