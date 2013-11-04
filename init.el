@@ -257,3 +257,6 @@
 
 (require 'expand-region)
 (global-set-key (kbd "M-j") 'er/expand-region)
+
+(delete '(".+\\.scss$" flymake-scss-init) flymake-allowed-file-name-masks)
+(setq scss-compile-at-save nil)
