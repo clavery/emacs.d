@@ -8,7 +8,7 @@
       (expand-file-name "site-lisp" user-emacs-directory))
 
 (package-initialize)
-(add-to-list 'package-archives 
+(add-to-list 'package-archives
              '("marmalade" .
                "http://marmalade-repo.org/packages/"))
 (add-to-list 'package-archives
@@ -22,7 +22,6 @@
 (add-to-list 'load-path user-emacs-directory)
 (add-to-list 'load-path site-lisp-dir)
 
-; load site lisp subdirs
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
@@ -31,14 +30,10 @@
 (when is-mac
   (exec-path-from-shell-initialize)
   (setq mac-command-modifier 'meta))
-(require 'server)
-;(and (>= emacs-major-version 23) (defun server-ensure-safe-dir (dir) "Noop" t))
-;(unless (server-running-p)
-;  (server-start))
 
 (require 'better-defaults)
 
-(require 'appearance)
+
 
 (require 'keybindings)
 
@@ -46,12 +41,12 @@
 
 ;; evil mode
 (require 'evil)
-;(evil-mode 1)
-;(setq-default evil-shift-width
+                                        ;(evil-mode 1)
+                                        ;(setq-default evil-shift-width
 
 (delete-selection-mode 1)
 
-; show in progress keystrokes
+                                        ; show in progress keystrokes
 (setq echo-keystrokes 0.1)
 
 ;; Answering just 'y' or 'n' will do
@@ -78,7 +73,7 @@
 
 (set-default 'indent-tabs-mode nil)
 
-; memory
+                                        ; memory
 (setq gc-cons-threshold 20000000)
 
 (setq ido-enable-flex-matching t)
@@ -87,10 +82,10 @@
 (setq ido-everywhere t)
 (setq ido-max-directory-size 100000)
 (ido-everywhere 1)
-; turn off bell
+                                        ; turn off bell
 (setq ring-bell-function 'ignore)
 
-; autosave
+                                        ; autosave
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
 
@@ -120,7 +115,7 @@
 
 ;; Mode line
 (setq my-mode-line-evil-status
-      '(:eval (cond 
+      '(:eval (cond
                ((evil-normal-state-p)
                 (propertize " <N> " 'face 'font-lock-warning-face))
                ((evil-insert-state-p)
@@ -134,62 +129,62 @@
 
 
 (setq my-mode-line-format
-  (list
-     " "
+      (list
+       " "
 
-     my-mode-line-evil-status
+       my-mode-line-evil-status
 
-    
-    ;; the buffer name; the file name as a tool tip
-    '(:eval (propertize "%b " 'face 'font-lock-keyword-face
-        'help-echo (buffer-file-name)))
 
-    ;; line and column
-    "(" ;; '%02' to set to 2 chars at least; prevents flickering
-      (propertize "%02l" 'face 'font-lock-type-face) ","
-      (propertize "%02c" 'face 'font-lock-type-face) 
-    ") "
+       ;; the buffer name; the file name as a tool tip
+       '(:eval (propertize "%b " 'face 'font-lock-keyword-face
+                           'help-echo (buffer-file-name)))
 
-    ;; relative position, size of file
-    "["
-    (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-    "/"
-    (propertize "%I" 'face 'font-lock-constant-face) ;; size
-    "] "
+       ;; line and column
+       "(" ;; '%02' to set to 2 chars at least; prevents flickering
+       (propertize "%02l" 'face 'font-lock-type-face) ","
+       (propertize "%02c" 'face 'font-lock-type-face)
+       ") "
 
-    ;; the current major mode for the buffer.
-    "["
+       ;; relative position, size of file
+       "["
+       (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+       "/"
+       (propertize "%I" 'face 'font-lock-constant-face) ;; size
+       "] "
 
-    '(:eval (propertize "%m" 'face 'font-lock-string-face
-              'help-echo buffer-file-coding-system))
-    "] "
+       ;; the current major mode for the buffer.
+       "["
 
-    "["
-    ;; was this buffer modified since the last save?
-    '(:eval (when (buffer-modified-p)
-              (concat ""  (propertize "Mod"
-                             'face 'font-lock-variable-name-face
-                             'help-echo "Buffer has been modified"))))
+       '(:eval (propertize "%m" 'face 'font-lock-string-face
+                           'help-echo buffer-file-coding-system))
+       "] "
 
-    ;; is this buffer read-only?
-    '(:eval (when buffer-read-only
-              (concat " "  (propertize "RO"
-                             'face 'font-lock-type-face
-                             'help-echo "Buffer is read-only"))))  
-    "] "
+       "["
+       ;; was this buffer modified since the last save?
+       '(:eval (when (buffer-modified-p)
+                 (concat ""  (propertize "Mod"
+                                         'face 'font-lock-variable-name-face
+                                         'help-echo "Buffer has been modified"))))
 
-    ;; add the time, with the date and the emacs uptime in the tooltip
-    '(:eval (propertize (format-time-string "%H:%M")
-              'help-echo
-              (concat (format-time-string "%c; ")
-                      (emacs-uptime "Uptime:%hh"))))
-    ;; i don't want to see minor-modes; but if you want, uncomment this:
-    ;; minor-mode-alist  ;; list of minor modes
+       ;; is this buffer read-only?
+       '(:eval (when buffer-read-only
+                 (concat " "  (propertize "RO"
+                                          'face 'font-lock-type-face
+                                          'help-echo "Buffer is read-only"))))
+       "] "
 
-    " "
+       ;; add the time, with the date and the emacs uptime in the tooltip
+       '(:eval (propertize (format-time-string "%H:%M")
+                           'help-echo
+                           (concat (format-time-string "%c; ")
+                                   (emacs-uptime "Uptime:%hh"))))
+       ;; i don't want to see minor-modes; but if you want, uncomment this:
+       ;; minor-mode-alist  ;; list of minor modes
 
-    '(:eval global-mode-string)
-    ))
+       " "
+
+       '(:eval global-mode-string)
+       ))
 
 (setq-default mode-line-format my-mode-line-format)
 (setq mode-line-format my-mode-line-format)
@@ -225,10 +220,10 @@
 (add-hook 'ido-setup-hook 'ido-define-keys)
 
 
-; sort ido filelist by mtime instead of alphabetically
+                                        ; sort ido filelist by mtime instead of alphabetically
 (defun ido-sort-mtime ()
   (setq ido-temp-list
-        (sort ido-temp-list 
+        (sort ido-temp-list
               (lambda (a b)
                 (time-less-p
                  (sixth (file-attributes (concat ido-current-directory b)))
@@ -264,3 +259,13 @@
 
 (if (eq system-type 'windows-nt)
     (setq magit-git-executable "C:/Program Files (x86)/Git/bin/git.exe"))
+
+(defun what-face (pos)
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face (message "Face: %s" face) (message "No face at %d" pos))))
+
+(require 'appearance)
+
+(eval-after-load 'magit '(require 'init-magit))

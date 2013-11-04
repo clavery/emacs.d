@@ -6,7 +6,6 @@
 
 (define-key global-map (kbd "\C-x g") 'magit-status)
 
-
 (defun unix-werase-or-kill (arg)
       (interactive "*p")
       (if (and transient-mark-mode

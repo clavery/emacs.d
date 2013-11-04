@@ -121,13 +121,6 @@
  '(woman-bold ((t (:foreground "#F92672"))))
  '(woman-italic ((t (:foreground "#A6E22E"))))
  ;; magit stuff!!
- '(magit-file-header ((t (:foreground "violet"))))
- '(magit-hunk-header ((t (:foreground "blue"))))
- '(magit-header ((t (:foreground "cyan"))))
- '(magit-tag-label ((t (:background "blue" :foreground "orange"))))
- '(magit-diff-add ((t (:foreground "Green"))))
- '(magit-diff-del ((t (:foreground "Red"))))
- '(magit-item-highlight ((t (:background "#333333"))))
  '(linum ((t (:foreground "Grey36" :background "Grey18"))))
  '(woman-unknown ((t (:foreground "#66D9EF")))))
 
