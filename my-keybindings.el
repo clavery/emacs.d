@@ -1,7 +1,5 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-(define-key global-map (kbd "\C-z") 'evil-local-mode)
-
 (define-key global-map (kbd "\C-x k") 'kill-this-buffer)
 
 (define-key global-map (kbd "\C-x g") 'magit-status)

@@ -37,16 +37,6 @@
     ad-do-it))
 (ad-activate 'linum-update)
 
-
-(add-to-list 'face-font-family-alternatives
-             '("Consolas"))
-
-(setq initial-frame-alist '(
-                            (font . "Consolas-14")
-                            ))
-(setq default-frame-alist '(
-                            (font . "Consolas-14")
-                            ))
 (add-to-list 'default-frame-alist '(cursor-color . "#FFFF00"))
 (set-cursor-color "#FFFF00")
 
