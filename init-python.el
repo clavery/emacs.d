@@ -14,15 +14,4 @@
 
 (setq python-shell-interpreter "ipython")
 
-(defun python-run-buffer ()
-  "Use compile to run python programs"
-  (interactive)
-  (compile (concat "python " (buffer-name)))
-)
-(setq compilation-scroll-output t)
-
-(add-hook 'python-mode-hook '(lambda ()
-                               (local-set-key "\C-c\C-c" 'python-run-buffer)
-                               ))
-
-(provide 'my-python)
+(provide 'init-python)

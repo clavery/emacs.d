@@ -63,6 +63,7 @@
 
 (setq org-src-fontify-natively t)
 (setq org-agenda-window-setup 'current-window)
+
 (require 'org-protocol)
 
-(provide 'orgmode)
+(provide 'init-orgmode)

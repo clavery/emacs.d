@@ -28,4 +28,4 @@
 
 (global-set-key (kbd "\C-c d") 'dash-at-point)
 
-(provide 'keybindings)
+(provide 'my-keybindings)
