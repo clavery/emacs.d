@@ -16,3 +16,4 @@ bookmarks
 .emacs.desktop
 .emacs.desktop.lock
 /ac-comphist.dat
+tramp
